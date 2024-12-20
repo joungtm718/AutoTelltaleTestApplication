@@ -131,7 +131,7 @@ def select_file(entry_field, file_type):
 if __name__ == "__main__":
     # Tkinter GUI
     root = tk.Tk()
-    root.title("Visteon Function Test for Cluster Ver. 0.1")
+    root.title("Visteon Function Test for Cluster Ver. 0.2")
 
     # FTP Excel File
     tk.Label(root, text="FTP Excel File:").grid(row=0, column=0, padx=10, pady=5, sticky="w")
