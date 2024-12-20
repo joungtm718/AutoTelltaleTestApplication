@@ -4,6 +4,7 @@ import os
 import openpyxl
 import cantools
 import can
+from can.interfaces.vector import VectorBus  # VectorBus 임포트
 from openpyxl.styles import PatternFill, Font
 
 def get_cell_fill(color_value):
@@ -13,7 +14,7 @@ def get_cell_fill(color_value):
 
 def send_TT_msg(dbc, sheet, log_file_path=None):
     """Sends a single message and optionally logs CAN messages."""
-    with can.Bus(interface='vector', app_name='CANalyzer', channel=0, bitrate=500000) as bus:
+    with VectorBus(channel=0, bitrate=500000) as bus:  # VectorBus 사용
         if log_file_path:
             logger = can.Logger(log_file_path)
         else:
